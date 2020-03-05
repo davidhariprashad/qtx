@@ -7,12 +7,6 @@ import org.testng.annotations.Test;
 
 public class TestCheckbox extends TestSuperClass {
 
-	TestCheckbox() {
-		beforeTest();
-		test();
-		afterTest();
-	}
-
 	@Test
 	void test() {
 		List<WebElement> checkboxes = new CheckBoxPageObject(webDriver)
