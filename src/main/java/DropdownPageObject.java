@@ -21,8 +21,8 @@ public class DropdownPageObject extends SuperPageObject {
 		return new Select(webDriver.findElement(By.id("dropdown")));
 	}
 
-	protected DropdownPageObject navigate() {
-		final String url = "http://the-internet.herokuapp.com/dropdown";
+	protected DropdownPageObject navigate(final String path) {
+		final String url = new StringBuilder(domainName).append(path).toString();
 		webDriver.navigate().to(url);
 		return this;
 	}

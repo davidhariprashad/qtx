@@ -2,7 +2,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-public abstract class TestSuperClass {
+public abstract class SuperTestClass {
 
 	@BeforeTest
 	public void	beforeTest() {
@@ -15,6 +15,7 @@ public abstract class TestSuperClass {
 		driverManager.quitDriver();
 	}
 	
+	protected abstract void test();
 	protected DriverManager driverManager;
 	protected WebDriver webDriver;
 		

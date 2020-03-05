@@ -8,8 +8,8 @@ public class LogInPageObject extends SuperPageObject {
 		super(webDriverInstance);
 	}
 
-	public LogInPageObject navigate() {
-		final String url = "http://the-internet.herokuapp.com/login";
+	public LogInPageObject navigate(final String path) {
+		final String url = new StringBuilder(domainName).append(path).toString();
 		webDriver.navigate().to(url);
 		return this;
 	}
