@@ -7,8 +7,15 @@ import org.testng.annotations.Test;
 
 public class CheckboxTest extends SuperTestClass {
 
+	/*
+	 * As a user,
+	 * I want to be able to check boxes
+	 * so that I may select the options I want.
+	 */
 	@Test
+	@Override
 	public void test() {
+		
 		List<WebElement> checkboxes = new CheckboxPageObject(webDriver)
 				.navigate("checkboxes")
 				.getCheckbox()
@@ -20,5 +27,6 @@ public class CheckboxTest extends SuperTestClass {
 			Assert.assertTrue(wasSelected != element.isSelected(), "Clicking the button did nothing.");
 			System.out.println("Clicked on checkbox successfully.");
 		}
+		
 	}
 }
