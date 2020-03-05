@@ -1,8 +1,8 @@
 public class DriverManagerFactory {
 
-	public static DriverManager getManager(DriverType type) {
+	public static DriverManager getManager(final DriverType type) {
 		
-		switch(type) {
+		switch (type) {
 		
 		case CHROME:
 			return new ChromeDriverManager();

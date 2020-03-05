@@ -5,25 +5,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ChromeDriverManager extends DriverManager {
 
 	@Override
-	protected void startService() {
-		
-	}
+	protected void startService() {}
 
 	@Override
-	protected void stopService() {
-		
-	}
+	protected void stopService() {}
 
 	@Override
 	protected void createDriver() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\ChromeDriver\\chromedriver.exe");
+		
+		final String key = "webdriver.chrome.driver";
+		final String value = "C:\\Program Files\\ChromeDriver\\chromedriver.exe";
+		System.setProperty(key, value);
+		
 		driver = new ChromeDriver();
+		
 		final long time = 1000;
 		final TimeUnit unit = TimeUnit.MILLISECONDS;
-		// poll for condition until the time out
 		driver.manage().timeouts().implicitlyWait(time, unit);
-		// wait for an element to appear
 		driver.manage().timeouts().pageLoadTimeout(time, unit);
+		
 	}
 
 }

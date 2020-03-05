@@ -3,14 +3,19 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public abstract class TestSuperClass {
-	
+
 	@BeforeTest
-	public abstract void beforeTest();
-	
+	public void	beforeTest() {
+		driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
+		webDriver = driverManager.getDriver();
+	}
+
 	@AfterTest
-	public abstract void afterTest();
+	public void afterTest() {
+		driverManager.quitDriver();
+	}
 	
-	protected DriverManager manager;
-	protected WebDriver driver;
+	protected DriverManager driverManager;
+	protected WebDriver webDriver;
 		
 }
