@@ -44,9 +44,11 @@ public class SliderTest extends SuperTestClass {
 	public void test() {
 		
 		final SliderPageObject pageObject = new SliderPageObject(webDriver);
-		final WebElement slider = pageObject.
-				navigate("horizontal_slider")
+		final WebElement slider = pageObject
+				.navigate("horizontal_slider")
 				.getRange();
+		final double minValue = Double.parseDouble(slider.getAttribute("min").trim());
+		final double maxValue = Double.parseDouble(slider.getAttribute("max").trim());
 		final Rectangle sliderRectangle = slider.getRect();
 		
 		final Action dragSliderToMax = new Actions(webDriver)
@@ -57,12 +59,10 @@ public class SliderTest extends SuperTestClass {
 				.build();
 		
 		final double before = pageObject.getRangeValue();
-		Assert.assertEquals(before, 0.0);
+		Assert.assertEquals(before, minValue);
 		dragSliderToMax.perform();
 		final double after = pageObject.getRangeValue();
-		System.out.println(new StringBuilder("Before: ").append(before).toString());
-		System.out.println(new StringBuilder("After: ").append(after).toString());
-		Assert.assertEquals(after, 5.0);
+		Assert.assertEquals(after, maxValue);
 		
 	}
 
