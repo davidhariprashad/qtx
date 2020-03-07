@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeTest;
 public abstract class SuperTestClass {
 
 	@BeforeTest
-	public void	beforeTest() {
+	public void beforeTest() {
 		driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
 		webDriver = driverManager.getDriver();
 	}
