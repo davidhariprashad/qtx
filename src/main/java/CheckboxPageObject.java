@@ -8,7 +8,7 @@ public class CheckboxPageObject extends SuperPageObject {
 		super(webDriverInstance);
 	}
 
-	protected CheckboxPageObject navigate(final String path) {
+	public CheckboxPageObject navigate(final String path) {
 		final String url = new StringBuilder(domainName).append(path).toString();
 		webDriver.navigate().to(url);
 		return this;
