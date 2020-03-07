@@ -27,11 +27,11 @@ public class SliderTest extends SuperTestClass {
 				.release()
 				.build();
 
-		final double before = pageObject.getRangeValue();
-		Assert.assertEquals(before, minValue);
+		final double beforeValue = pageObject.getRangeValue();
+		Assert.assertEquals(beforeValue, minValue);
 		dragSliderToMax.perform();
-		final double after = pageObject.getRangeValue();
-		Assert.assertEquals(after, maxValue);
+		final double afterValue = pageObject.getRangeValue();
+		Assert.assertEquals(afterValue, maxValue);
 
 	}
 
