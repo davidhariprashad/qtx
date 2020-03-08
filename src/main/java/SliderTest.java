@@ -35,35 +35,4 @@ public class SliderTest extends SuperTestClass {
 
 	}
 
-	public void naivetest() {
-
-		SliderPageObject pageObject = new SliderPageObject(webDriver);
-		WebElement slider = pageObject.
-				navigate("horizontal_slider")
-				.getRange();
-
-		Action setSliderToMaxValue = new Actions(webDriver)
-				.moveToElement(slider)
-				.click()
-				.sendKeys(Keys.ARROW_RIGHT,
-						Keys.ARROW_RIGHT,
-						Keys.ARROW_RIGHT,
-						Keys.ARROW_RIGHT,
-						Keys.ARROW_RIGHT,
-						Keys.ARROW_RIGHT,
-						Keys.ARROW_RIGHT,
-						Keys.ARROW_RIGHT,
-						Keys.ARROW_RIGHT)
-				.build();
-
-		double before = pageObject.getRangeValue();
-		Assert.assertEquals(before, 0.0);
-		setSliderToMaxValue.perform();
-		double after = pageObject.getRangeValue();
-		System.out.println(new StringBuilder("Before: ").append(before).toString());
-		System.out.println(new StringBuilder("After: ").append(after).toString());
-		Assert.assertEquals(after, 5.0);
-
-	}
-
 }
