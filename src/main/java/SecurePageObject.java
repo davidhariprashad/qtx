@@ -8,8 +8,13 @@ public class SecurePageObject extends SuperPageObject{
 	@FindBy(id="flash")
 	private WebElement greenBox;
 	
+	SecurePageObject(final WebDriver webDriverInstance, final String domainNameInstance) {
+		super(webDriverInstance, domainNameInstance);
+		PageFactory.initElements(webDriver, this);
+	}
+	
 	SecurePageObject(final WebDriver webDriverInstance) {
-		super(webDriverInstance);
+		super(webDriverInstance, null);
 		PageFactory.initElements(webDriver, this);
 	}
 	

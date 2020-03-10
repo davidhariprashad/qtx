@@ -12,9 +12,10 @@ public class DropdownTest extends SuperTestClass {
 	@Override
 	public void test() {
 
+		final String url = "http://the-internet.herokuapp.com/";
 		final String expectedSelectionText = "Option 2";
 		
-		final String actualOption2Text = new DropdownPageObject(webDriver)
+		final String actualOption2Text = new DropdownPageObject(webDriver, url)
 				.navigate("dropdown")
 				.setDropdownList(expectedSelectionText)
 				.getDropdownListValue();

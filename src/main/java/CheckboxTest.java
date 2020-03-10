@@ -16,7 +16,8 @@ public class CheckboxTest extends SuperTestClass {
 	@Override
 	public void test() {
 		
-		List<WebElement> checkboxes = new CheckboxPageObject(webDriver)
+		final String url = "http://the-internet.herokuapp.com/";
+		List<WebElement> checkboxes = new CheckboxPageObject(webDriver, url)
 				.navigate("checkboxes")
 				.getCheckbox()
 				.findElements(By.xpath("//input[@type='checkbox']"));

@@ -3,11 +3,11 @@ import org.openqa.selenium.WebDriver;
 public abstract class SuperPageObject {
 
 	protected WebDriver webDriver;
-	final protected String domainName = "http://the-internet.herokuapp.com/";
+	protected String domainName;
 	
-	protected SuperPageObject(final WebDriver webDriverInstance) {
+	protected SuperPageObject(final WebDriver webDriverInstance, final String domainNameInstance) {
 		webDriver = webDriverInstance;
-		
+		domainName = domainNameInstance;
 	}
 	
 }

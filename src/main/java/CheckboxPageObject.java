@@ -4,8 +4,8 @@ import org.openqa.selenium.WebElement;
 
 public class CheckboxPageObject extends SuperPageObject {
 
-	protected CheckboxPageObject(WebDriver webDriverInstance) {
-		super(webDriverInstance);
+	protected CheckboxPageObject(final WebDriver webDriverInstance, final String domainNameInstance) {
+		super(webDriverInstance, domainNameInstance);
 	}
 
 	public CheckboxPageObject navigate(final String path) {

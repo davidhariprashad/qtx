@@ -1,4 +1,3 @@
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -12,7 +11,8 @@ public class SliderTest extends SuperTestClass {
 	@Override
 	public void test() {
 
-		final SliderPageObject pageObject = new SliderPageObject(webDriver);
+		final String url = "http://the-internet.herokuapp.com/";
+		final SliderPageObject pageObject = new SliderPageObject(webDriver, url);
 		final WebElement slider = pageObject
 				.navigate("horizontal_slider")
 				.getRange();

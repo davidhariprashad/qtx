@@ -4,12 +4,12 @@ import org.openqa.selenium.WebElement;
 
 public class SliderPageObject extends SuperPageObject {
 
-	protected SliderPageObject(WebDriver webDriverInstance) {
-		super(webDriverInstance);
+	protected SliderPageObject(final WebDriver webDriverInstance, final String domainNameInstance) {
+		super(webDriverInstance, domainNameInstance);
 	}
 	
-	public SliderPageObject navigate(final String path) {
-		final String url = new StringBuilder(domainName).append(path).toString();
+	public SliderPageObject navigate(final String subdirectory) {
+		final String url = new StringBuilder(domainName).append(subdirectory).toString();
 		webDriver.navigate().to(url);
 		return this;
 	}

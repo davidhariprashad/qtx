@@ -4,8 +4,8 @@ import org.openqa.selenium.WebElement;
 
 public class LogInPageObject extends SuperPageObject {
 
-	public LogInPageObject(WebDriver webDriverInstance) {
-		super(webDriverInstance);
+	public LogInPageObject(final WebDriver webDriverInstance, final String domainNameInstance) {
+		super(webDriverInstance, domainNameInstance);
 	}
 
 	public LogInPageObject navigate(final String path) {

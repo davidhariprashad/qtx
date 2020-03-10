@@ -4,8 +4,8 @@ import org.openqa.selenium.support.ui.Select;
 
 public class DropdownPageObject extends SuperPageObject {
 	
-	public DropdownPageObject(WebDriver driverInstance) {
-		super(driverInstance);
+	public DropdownPageObject(final WebDriver driverInstance, final String domainNameInstance) {
+		super(driverInstance, domainNameInstance);
 	}
 	
 	public DropdownPageObject setDropdownList(final String value) {
