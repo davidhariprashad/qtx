@@ -22,9 +22,8 @@ public class SecurePageObject extends SuperPageObject{
 		return greenBox.getText();
 	}
 
-	public SuperPageObject navigate() {
-		final String url = "http://the-internet.herokuapp.com/secure";
-		webDriver.navigate().to(url);
+	public SuperPageObject navigate(final String subdirectory) {
+		webDriver.navigate().to(new StringBuilder(domainName).append(subdirectory).toString());
 		return this;
 	}
 	
